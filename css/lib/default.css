@@ -1,0 +1,65 @@
+/* CSS Document */
+/* Author: Андрей Бородько [http://astronim.com] */
+
+/* RESET  можно редактировать*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+body {line-height: 100%; background: #fff;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, 
+blockquote:after, 
+q:before, 
+q:after {content: ''; content: none;}
+/* remember to define focus styles! */
+:focus {outline: 0;}
+/* remember to highlight inserts somehow! */
+ins {text-decoration: none;}
+del {text-decoration: line-through;}
+/* tables still need 'cellspacing="0"' in the markup */
+table {border-collapse: collapse; border-spacing: 0;}
+input.btn { cursor: pointer; cursor: hand; }
+
+/*  MUSTHAVE неприкасаем */
+.gray, .grey { color:#A5A5A5; font-size:10px; line-height:10px; }
+.red, .error { color:#C03B20; }
+.sstr { font-weight:bold; }
+.star { color: #C03B20; margin-left: -12px; position:absolute; display:block}
+img.imgl {float: left;}
+img.imgr {float: right;}
+
+/* fix blinking background images в IE6 */
+html { filter: expression(runtimeStyle.filter = '',document.execCommand('BackgroundImageCache', false, true));}
+.cut_text {display: none;}
+
+/*  CONTENT настраивается, здесь можно использовать 'em' */
+#content a {color: #000; text-decoration: underline;}
+#content a:hover {text-decoration: none;}
+#content p, #content div {padding:  10px 0 0 0;}
+#content p, #content h4, #content h5 { font-size: 13px; }
+#content h1, #content h2, #content h3, #content h4, #content h5 { 
+	color: #0f0; 
+	font-family:Arial, Tahoma; 
+	font-weight:bold;  
+}
+#content h2, #content h3, #content h4, #content h5 { margin: 15px 0 0 0; }
+#content h2{ font-size: 22px; }
+#content h2{ font-size: 19px; }
+#content h3{ font-size: 18px; }
+
+#content ul {margin: 10px 0 5px 0; }
+#content ul li { list-style: disc;}
+#content li {padding: 0 0 1px 0; margin:  0 0 0 20px; }
+
+#content table.tbl { width:100%; border:0; border-collapse:collapse; border-bottom:1px solid #000; margin-bottom:5px }
+#content table.tbl td.theader { border-bottom:0; background-color:#E7EFF4; padding: 3px 10px; font-weight:bold }
+#content table.tbl td { border-bottom:1px solid #EEEEEE; padding: 3px 10px }
+
+TD.comment { display: none; }
