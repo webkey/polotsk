@@ -10,18 +10,108 @@
 *:focus{
 	outline: none;
 }
+.wrapper{
+	overflow: hidden;
+}
 
 
 /*=========!!!============*/
-.block .hidden{
+.block{
+	overflow: hidden;
+	position: relative;
+}
+/*.block .blockContent .hidden{
 	display: block;
+
+	height: 0;
+}
+.block.open .blockContent .hidden{
+	height: auto;
+}*/
+.block .blockContent .hidden{
+	display: block;
+}
+.block{
+	max-height: 64px;
+	overflow: hidden;
+	-webkit-transition: max-height 0.2s;
+	transition: max-height 0.2s;
+}
+.block.open{
+	max-height: 600px
 }
 /*=========!!!============*/
 
 
 
 /* 20171228 */
+.sectContent{
+	padding: 30px 0;
+	width: 1000px;
+	margin: 0 auto;
+	position: relative;
+}
+.sectTitle{
+	font-family: "Franklin Gothic Medium", Arial, sans-serif;
+	font-size: 26px;
+	line-height: 30px;
+	margin-bottom: 25px;
+	color: #ffc600;
+	padding-left: 32px;
+}
+
+.popularDep{
+	position: relative;
+	margin-bottom: 30px;
+}
+.popularDep:last-child{
+	margin-bottom: 0;
+}
+.popularDep__list{
+	margin: 0 -15px;
+	font-size: 0;
+	letter-spacing: -4px;
+}
+.popularDep__item{
+	display: inline-block;
+	vertical-align: top;
+	width: 24.99%;
+	padding: 0 15px 10px;
+	box-sizing: border-box;
+	font-size: 16px;
+	line-height: 19px;
+	letter-spacing: normal;
+}
+.popularDep__inner{
+	text-decoration: none;
+	color: #feba31;
+}
+.popularDep__inner:before,
+.popularDep__inner:after { content: ""; display: table; }
+.popularDep__inner:after { clear: both; }
+.popularDep__img{
+	display: block;
+	float: left;
+	width: 40px;
+	padding-right: 5px;
+	box-sizing: border-box;
+}
+.popularDep__img img{
+	display: block;
+	width: auto;
+	max-width: 100%;
+}
+.popularDep__title{
+	margin-left: 40px;
+	padding-top: 4px;
+	text-decoration: underline;
+}
+.popularDep__inner:hover .popularDep__title{
+	text-decoration: none;
+}
+
 .technoSlider{
+	position: relative;
 	padding: 10px 0 50px;
 }
 .technoSlider__list {
@@ -31,6 +121,22 @@
 	visibility: hidden;
 	position: relative;
 	margin-bottom: 0;
+}
+.technoSlider__list::before,
+.technoSlider__list::after{
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 999px;
+	z-index: 10;
+}
+.technoSlider__list::before{
+	left: 100%;
+}
+.technoSlider__list::after{
+	right: 100%;
 }
 .technoSlider__list .slick-list{
 	overflow: visible;
@@ -144,8 +250,11 @@
 	width: 31px;
 	background: url(../i/arrows.png);
 	will-change: transform;
+	z-index: 15;
+}
+.technoSlider .slick-prev,
+.technoSlider .slick-next{
 	margin-top: 35px;
-	z-index: 10;
 }
 .slick-prev{
 	left: -30px;
@@ -184,34 +293,49 @@
 }
 
 .technoSlider .slick-list:hover .technoSlider__inner {
-	-webkit-transform: scale(0.69, 0.69);
-	-ms-transform: scale(0.69, 0.69);
+	-webkit-transform: scale(0.69, 0.69) translate(0, -15%);
+	-ms-transform: scale(0.69, 0.69) translate(0, -15%);
 	transform: scale(0.69, 0.69) translate(0, -15%);
 }
 .technoSlider .technoSlider__item.hover-prev-prev .technoSlider__inner{
-	-webkit-transform: scale(0.93, 0.93);
-	-ms-transform: scale(0.93, 0.93);
-	transform: scale(0.93, 0.93) translate(-20%, -3%);
+	/*-webkit-transform: scale(0.93, 0.93);*/
+	/*-ms-transform: scale(0.93, 0.93);*/
+	/*transform: scale(0.93, 0.93) translate(-20%, -3%);*/
+	-webkit-transform: scale(0.88, 0.88) translate(-20%, -3%);
+	-ms-transform: scale(0.88, 0.88) translate(-20%, -3%);
+	transform: scale(0.88, 0.88) translate(-20%, -3%);
 }
 .technoSlider .technoSlider__item.hover-next-next .technoSlider__inner {
-	-webkit-transform: scale(0.93, 0.93);
-	-ms-transform: scale(0.93, 0.93);
-	transform: scale(0.93, 0.93) translate(20%, -3%);
+	/*-webkit-transform: scale(0.93, 0.93);*/
+	/*-ms-transform: scale(0.93, 0.93);*/
+	/*transform: scale(0.93, 0.93) translate(20%, -3%);*/
+	-webkit-transform: scale(0.88, 0.88) translate(20%, -3%);
+	-ms-transform: scale(0.88, 0.88) translate(20%, -3%);
+	transform: scale(0.88, 0.88) translate(20%, -3%);
 }
 .technoSlider .technoSlider__item.hover-prev .technoSlider__inner{
-	-webkit-transform: scale(1.27, 1.27);
-	-ms-transform: scale(1.27, 1.27);
-	transform: scale(1.27, 1.27) translate(-20%, 11%);
+	/*-webkit-transform: scale(1.27, 1.27);*/
+	/*-ms-transform: scale(1.27, 1.27);*/
+	/*transform: scale(1.27, 1.27) translate(-20%, 11%);*/
+	-webkit-transform: scale(1.1, 1.1) translate(-20%, 11%);
+	-ms-transform: scale(1.1, 1.1) translate(-20%, 11%);
+	transform: scale(1.1, 1.1) translate(-20%, 11%);
 }
 .technoSlider .technoSlider__item.hover-next .technoSlider__inner {
-	-webkit-transform: scale(1.27, 1.27);
-	-ms-transform: scale(1.27, 1.27);
-	transform: scale(1.27, 1.27) translate(20%, 11%);
+	/*-webkit-transform: scale(1.27, 1.27);*/
+	/*-ms-transform: scale(1.27, 1.27);*/
+	/*transform: scale(1.27, 1.27) translate(20%, 11%);*/
+	-webkit-transform: scale(1.1, 1.1) translate(20%, 11%);
+	-ms-transform: scale(1.1, 1.1) translate(20%, 11%);
+	transform: scale(1.1, 1.1) translate(20%, 11%);
 }
 .technoSlider .technoSlider__item.hover-current .technoSlider__inner {
-	-webkit-transform: scale(1.66, 1.66) translate(0, 20%);
-	-ms-transform: scale(1.66, 1.66) translate(0, 20%);
-	transform: scale(1.66, 1.66) translate(0, 20%);
+	/*-webkit-transform: scale(1.66, 1.66) translate(0, 20%);*/
+	/*-ms-transform: scale(1.66, 1.66) translate(0, 20%);*/
+	/*transform: scale(1.66, 1.66) translate(0, 20%);*/
+	-webkit-transform: scale(1.4, 1.4) translate(0, 20%);
+	-ms-transform: scale(1.4, 1.4) translate(0, 20%);
+	transform: scale(1.4, 1.4) translate(0, 20%);
 }
 
 .l-footer{
@@ -222,8 +346,10 @@
 .btnDef{
 	display: inline-block;
 	vertical-align: top;
+	/*font-family: "Franklin Gothic Medium", Arial;*/
 	font-size: 14px;
 	line-height: 18px;
+	font-weight: bold;
 	color: white;
 	text-decoration: none;
 	text-align: center;
@@ -341,6 +467,11 @@
 }
 /*popular end*/
 
+.blockRewards{
+	background: url(../i/bg-space.jpg) no-repeat center;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
 .rewardsSlider{
 	padding: 10px 0 50px;
 }
@@ -392,8 +523,8 @@
 .rewardsSlider__inner{
 	display: block;
 	position: relative;
-	padding: 30px 30px 120px;
-	margin-bottom: -100px;
+	padding: 30px 30px 220px;
+	margin-bottom: -200px;
 	text-decoration: none;
 	font-size: 16px;
 	line-height: 20px;

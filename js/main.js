@@ -44,12 +44,26 @@ $(document).ready(function(){
 	
 	
 	$('.philosophy .button').click(function(){
-		$('.philosophy .hidden').slideToggle(200);
+		$('.philosophy .hidden').stop().slideToggle(200);
 		$('.philosophy .button').toggleClass('active');
 	});
-	
+
+	/*add*/
+	// $('.hidden').each(function () {
+	// 	var $cur = $(this);
+	// 	if($cur.find('.has-slider-js').length === 0){
+	// 		$cur.css({
+	// 			"height": "auto",
+	// 			"overflow": "visible",
+	// 			"display": "none"
+	// 		})
+	// 	}
+	// });
+
+	/*add end*/
+
 	$('.block .blockName .pseudo').click(function(){
-		$(this).parents('.block:last').find('.hidden').slideToggle(400);
+		// $(this).parents('.block:last').find('.hidden').stop().slideToggle(400);
 		$(this).parents('.block:last').toggleClass('open');
 	});
 	
@@ -120,7 +134,13 @@ $(document).ready(function(){
 			var dur = 200;
 
 			$currentSlider.on('init', function (event, el) {
-
+				// setTimeout(function () {
+				// 	$(el.$slider).closest('.hidden').css({
+				// 		"height": "auto",
+				// 		"overflow": "visible",
+				// 		"display": "none"
+				// 	})
+				// }, 200)
 			}).slick({
 				fade: false,
 				speed: dur,
@@ -130,6 +150,36 @@ $(document).ready(function(){
 				// autoplaySpeed: 5000,
 				// initialSlide: 2,
 				// lazyLoad: 'ondemand',
+				infinite: false,
+				dots: false,
+				arrows: true
+			});
+
+		});
+	}
+
+	/*gov slider*/
+	var $rewardsSlider = $('.rewardsSlider-js');
+
+	if ($rewardsSlider.length) {
+
+		$rewardsSlider.each(function () {
+			var $currentSlider = $(this);
+			var dur = 200;
+
+			$currentSlider.on('init', function (event, el) {
+				// setTimeout(function () {
+				// 	$(el.$slider).closest('.hidden').css({
+				// 		"height": "auto",
+				// 		"overflow": "visible",
+				// 		"display": "none"
+				// 	})
+				// }, 200)
+			}).slick({
+				fade: false,
+				speed: dur,
+				slidesToShow: 4,
+				slidesToScroll: 4,
 				infinite: false,
 				dots: false,
 				arrows: true
