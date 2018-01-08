@@ -565,5 +565,42 @@
 	right: -15px;
 }
 
+.logo{
+	display: block;
+	text-decoration: none;
+	position: absolute;
+	top: 161px;
+	left: 77px;
+	width: 305px;
+	height: 300px;
+	text-indent: -9999px;
+	overflow: hidden;
+	background: url(../i/logo-static.png) no-repeat;
+	-webkit-animation: logoAnimate 4s ease-in-out infinite;
+	animation: logoAnimate 4s ease-in-out infinite;
+}
 
+@-webkit-keyframes logoAnimate {
+	0% {
+		-webkit-transform: rotateY(0deg); /* Safari */
+	}
+	90% {
+		-webkit-transform: rotateY(360deg); /* Safari */
+	}
+	100% {
+		-webkit-transform: rotateY(360deg); /* Safari */
+	}
+}
+
+@keyframes logoAnimate {
+	0% {
+		transform: rotateY(0deg); /* Safari */
+	}
+	90% {
+		transform: rotateY(360deg); /* Safari */
+	}
+	100% {
+		transform: rotateY(360deg); /* Safari */
+	}
+}
 /* 20171228 end */
